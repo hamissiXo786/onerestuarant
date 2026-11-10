@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fiamma · Cucina &amp; Bar: Wood-fire Italian dining</title>
+  <meta name="description" content="Fiamma is a wood-fire Italian kitchen and bar. Handmade pasta, oak-grilled steaks and an evening that feels effortless. Book a table online.">
+  <meta name="theme-color" content="#8c0a06">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fiamma · Cucina &amp; Bar">
+  <meta property="og:description" content="The art of the Italian flame. Wood-fire Italian dining and bar.">
+  <meta property="og:image" content="assets/img/hero-interior.jpg">
+  <link rel="icon" href="assets/logo/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Antonio:wght@500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script>document.documentElement.classList.replace('no-js', 'js');</script>
+</head>
+<body>
+  <!-- Monogram symbol, reused with <use href="#monogram"> -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="monogram" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <ellipse cx="50" cy="50" rx="40" ry="45"/>
+      <path d="M43 74 L49 32 H66"/>
+      <path d="M46 52 H60"/>
+      <path d="M49 32 C44 25 50 20 48 13 C55 19 57 26 49 32 Z" fill="currentColor" stroke-width="1.5"/>
+    </symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header" data-header>
+    <a class="wordmark" href="#top" aria-label="Fiamma, back to top">Fiamma</a>
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#story">Our story</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#events">Private events</a></li>
+        <li><a href="#experiences">Experiences</a></li>
+        <li><a href="#visit">Visit</a></li>
+      </ul>
+    </nav>
+    <div class="site-header__cta">
+      <a class="link-plain" href="tel:+10005550142">(000) 555-0142</a>
+      <a class="btn btn--red" href="#reserve">Book a table</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" data-nav-toggle>
+      <span class="nav-toggle__label">Menu</span>
+      <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span></span>
+    </button>
+  </header>
+
+  <div class="mobile-nav" id="mobile-nav" data-mobile-nav hidden>
+    <nav aria-label="Mobile">
+      <ul>
+        <li><a href="#story">Our story</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#events">Private events</a></li>
+        <li><a href="#experiences">Experiences</a></li>
+        <li><a href="#visit">Visit</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn--cream btn--block" href="#reserve">Book a table</a>
+    <p class="mobile-nav__meta">21 Ember Lane, Your City · (000) 555-0142</p>
+  </div>
+
+  <main id="main">
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero__media" data-parallax="0.18">
+        <img src="assets/img/hero-interior.jpg" width="2000" height="1200" alt="The Fiamma dining room at night, lit by warm pendant lamps" fetchpriority="high">
+      </div>
+      <div class="hero__content">
+        <svg class="monogram hero__mono" aria-hidden="true"><use href="#monogram"/></svg>
+        <p class="eyebrow">Cucina &amp; Bar · Est. 2026</p>
+        <h1 class="display hero__title split" id="hero-title" data-reveal>
+          <span class="line" style="--i:0"><span>The art of the</span></span>
+          <span class="line" style="--i:1"><span>Italian flame</span></span>
+        </h1>
+        <div class="hero__actions" data-reveal style="--i:3">
+          <a class="btn btn--red" href="#reserve">Book a table</a>
+          <a class="link-arrow link-arrow--light" href="#menu">View the menu <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <p class="hero__tag" aria-hidden="true">Wood-fire · Pasta · Bar</p>
+    </section>
+
+    <!-- ===================== STORY SPLIT + RING COLLAGE ===================== -->
+    <section class="story" id="story" aria-labelledby="story-title">
+      <div class="story__text panel panel--red">
+        <p class="eyebrow" data-reveal>Rooted in Italy</p>
+        <h2 class="display story__title split" id="story-title" data-reveal>
+          <span class="line" style="--i:0"><span>Italian fire.</span></span>
+          <span class="line" style="--i:1"><span>Modern table.</span></span>
+        </h2>
+        <div class="story__body" data-reveal>
+          <p>Our kitchen is built around a single oak fire. Northern Italian technique meets the patience of the grill, so every plate carries a little smoke, a little warmth and a lot of care. We source close to home, make our pasta by hand each morning and let the flame do the rest.</p>
+          <a class="link-arrow link-arrow--light" href="#menu">Discover the menu <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="story__collage panel panel--ember" data-collage>
+        <div class="ring">
+          <div class="ring__centre" aria-hidden="true"><svg class="monogram"><use href="#monogram"/></svg></div>
+          <figure class="ring__tile" style="--jx:8px;--jy:14px"><img src="assets/img/tile-01.jpg" width="520" height="520" alt="Grilled steak with herbs" loading="lazy"></figure>
+          <figure class="ring__tile" style="--jx:-4px;--jy:-10px"><img src="assets/img/tile-02.jpg" width="520" height="520" alt="Guests sharing dinner" loading="lazy"></figure>
+          <figure class="ring__tile" style="--jx:6px;--jy:6px"><img src="assets/img/tile-03.jpg" width="520" height="520" alt="A glass of red wine" loading="lazy"></figure>
+          <figure class="ring__tile" style="--jx:-10px;--jy:18px"><img src="assets/img/tile-04.jpg" width="520" height="520" alt="Handmade pasta" loading="lazy"></figure>
+          <figure class="ring__tile" style="--jx:12px;--jy:-4px"><img src="assets/img/tile-05.jpg" width="520" height="520" alt="The bar at golden hour" loading="lazy"></figure>
+          <figure class="ring__tile" style="--jx:-6px;--jy:8px"><img src="assets/img/tile-06.jpg" width="520" height="520" alt="Antipasti to share" loading="lazy"></figure>
+          <figure class="ring__tile" style="--jx:4px;--jy:-14px"><img src="assets/img/tile-07.jpg" width="520" height="520" alt="Charred vegetables" loading="lazy"></figure>
+          <figure class="ring__tile" style="--jx:-12px;--jy:-6px"><img src="assets/img/tile-08.jpg" width="520" height="520" alt="A server pouring wine" loading="lazy"></figure>
+          <figure class="ring__tile" style="--jx:10px;--jy:10px"><img src="assets/img/tile-09.jpg" width="520" height="520" alt="Negroni on the bar" loading="lazy"></figure>
+          <figure class="ring__tile" style="--jx:-8px;--jy:-12px"><img src="assets/img/tile-10.jpg" width="520" height="520" alt="Tiramisu" loading="lazy"></figure>
+          <figure class="ring__tile" style="--jx:14px;--jy:4px"><img src="assets/img/tile-11.jpg" width="520" height="520" alt="Candlelit table" loading="lazy"></figure>
+          <figure class="ring__tile" style="--jx:-6px;--jy:-8px"><img src="assets/img/tile-12.jpg" width="520" height="520" alt="Wood-fired flatbread" loading="lazy"></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MANIFESTO WORD STACK ===================== -->
+    <section class="manifesto" aria-labelledby="manifesto-title">
+      <figure class="manifesto__media">
+        <img src="assets/img/manifesto-guests.jpg" width="1200" height="1400" alt="Two guests laughing over dinner" loading="lazy">
+      </figure>
+      <div class="manifesto__text">
+        <p class="eyebrow" id="manifesto-title" data-reveal>Wood-fire Italian dining</p>
+        <ul class="word-stack" data-stagger>
+          <li data-reveal>Fuoco</li>
+          <li data-reveal>Sapore</li>
+          <li data-reveal>Famiglia</li>
+          <li data-reveal>Tavola</li>
+          <li data-reveal>Italia</li>
+        </ul>
+        <p class="word-stack__translation" data-reveal>Fire · Flavour · Family · Table · Italy</p>
+      </div>
+    </section>
+
+    <!-- ===================== CHEF CARD ===================== -->
+    <section class="chef" aria-labelledby="chef-title">
+      <div class="container chef__inner">
+        <figure class="chef__media" data-reveal>
+          <img src="assets/img/story-chef.jpg" width="1200" height="1400" alt="Chef Lucia Ferrante tending the oak fire" loading="lazy">
+        </figure>
+        <div class="chef__card panel--red" data-reveal style="--i:1">
+          <p class="eyebrow">The experience</p>
+          <h2 class="display chef__title" id="chef-title">Contemporary Italian, cooked over oak</h2>
+          <p>Chef Lucia Ferrante cooked her way from Bologna to Florence before lighting the fire at Fiamma. Her menu is short, seasonal and built for sharing: honest ingredients, precise technique and the kind of warm hospitality that makes you stay for one more glass.</p>
+          <a class="link-arrow link-arrow--light" href="#menu">View the menus <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MENU ===================== -->
+    <section class="menu" id="menu" aria-labelledby="menu-title">
+      <div class="menu__bg" aria-hidden="true" data-parallax="0.12">
+        <img src="assets/img/menu-bg.jpg" width="2000" height="1200" alt="" loading="lazy">
+      </div>
+      <div class="container">
+        <header class="menu__head">
+          <p class="eyebrow" data-reveal>The menu</p>
+          <h2 class="display menu__title split" id="menu-title" data-reveal>
+            <span class="line" style="--i:0"><span>Crafted by fire.</span></span>
+            <span class="line" style="--i:1"><span>Served with grace.</span></span>
+          </h2>
+        </header>
+
+        <div class="menu__tabs" role="tablist" aria-label="Menu sections" data-tabs data-stagger>
+          <button class="menu-card" role="tab" id="tab-antipasti" aria-controls="panel-antipasti" aria-selected="true" data-reveal>
+            <span class="menu-card__title">Antipasti</span>
+            <span class="menu-card__desc">Small plates and things to share</span>
+          </button>
+          <button class="menu-card" role="tab" id="tab-primi" aria-controls="panel-primi" aria-selected="false" tabindex="-1" data-reveal>
+            <span class="menu-card__title">Primi</span>
+            <span class="menu-card__desc">Handmade pasta and risotto</span>
+          </button>
+          <button class="menu-card" role="tab" id="tab-secondi" aria-controls="panel-secondi" aria-selected="false" tabindex="-1" data-reveal>
+            <span class="menu-card__title">Secondi</span>
+            <span class="menu-card__desc">Steaks, fish and the oak grill</span>
+          </button>
+          <button class="menu-card" role="tab" id="tab-dolci" aria-controls="panel-dolci" aria-selected="false" tabindex="-1" data-reveal>
+            <span class="menu-card__title">Dolci</span>
+            <span class="menu-card__desc">Italian desserts made with tradition</span>
+          </button>
+        </div>
+
+        <!-- Edit dishes and prices directly in these lists. -->
+        <div class="menu__panels">
+          <div class="menu-panel" role="tabpanel" id="panel-antipasti" aria-labelledby="tab-antipasti" tabindex="0">
+            <ul class="menu-list">
+              <li class="menu-item"><p class="menu-item__row"><span class="menu-item__name">Burrata &amp; charred peach</span><span class="menu-item__dots" aria-hidden="true"></span><span class="menu-item__price">16</span></p><p class="menu-item__desc">Basil oil, smoked almonds, grilled sourdough</p></li>
+              <li class="menu-item"><p class="menu-item__row"><span class="menu-item__name">Carpaccio di manzo</span><span class="menu-item__dots" aria-hidden="true"></span><span class="menu-item__price">19</span></p><p class="menu-item__desc">Ember-seared beef, rocket, aged parmigiano, lemon</p></li>
+              <li class="menu-item"><p class="menu-item__row"><span class="menu-item__name">Fritto misto</span><span class="menu-item__dots" aria-hidden="true"></span><span class="menu-item__price">18</span></p><p class="menu-item__desc">Calamari, prawns, courgette flowers, saffron aioli</p></li>
+              <li class="menu-item"><p class="menu-item__row"><span class="menu-item__name">Focaccia dal forno</span><span class="menu-item__dots" aria-hidden="true"></span><span class="menu-item__price">8</span></p><p class="menu-item__desc">Rosemary, flaky salt, whipped ricotta</p></li>
+            </ul>
+          </div>
+          <div class="menu-panel" role="tabpanel" id="panel-primi" aria-labelledby="tab-primi" tabindex="0" hidden>
+            <ul class="menu-list">
+              <li class="menu-item"><p class="menu-item__row"><span class="menu-item__name">Tagliatelle al ragù</span><span class="menu-item__dots" aria-hidden="true"></span><span class="menu-item__price">24</span></p><p class="menu-item__desc">Slow-cooked beef &amp; pork, nutmeg, parmigiano</p></li>
+              <li class="menu-item"><p class="menu-item__row"><span class="menu-item__name">Cacio e pepe</span><span class="menu-item__dots" aria-hidden="true"></span><span class="menu-item__price">21</span></p><p class="menu-item__desc">Tonnarelli, pecorino romano, toasted black pepper</p></li>
+              <li class="menu-item"><p class="menu-item__row"><span class="menu-item__name">Risotto ai funghi</span><span class="menu-item__dots" aria-hidden="true"></span><span class="menu-item__price">26</span></p><p class="menu-item__desc">Wild mushrooms, smoked butter, thyme</p></li>
+              <li class="menu-item"><p class="menu-item__row"><span class="menu-item__name">Ravioli di zucca</span><span class="menu-item__dots" aria-hidden="true"></span><span class="menu-item__price">23</span></p><p class="menu-item__desc">Roasted squash, brown butter, sage, amaretti</p></li>
+            </ul>
+          </div>
+          <div class="menu-panel" role="tabpanel" id="panel-secondi" aria-labelledby="tab-secondi" tabindex="0" hidden>
+            <ul class="menu-list">
+              <li class="menu-item"><p class="menu-item__row"><span class="menu-item__name">Bistecca alla Fiamma</span><span class="menu-item__dots" aria-hidden="true"></span><span class="menu-item__price">68</span></p><p class="menu-item__desc">Dry-aged T-bone for two, oak-grilled, rosemary salt</p></li>
+              <li class="menu-item"><p class="menu-item__row"><span class="menu-item__name">Filetto al Barolo</span><span class="menu-item__dots" aria-hidden="true"></span><span class="menu-item__price">44</span></p><p class="menu-item__desc">Beef tenderloin, Barolo reduction, charred shallots</p></li>
+              <li class="menu-item"><p class="menu-item__row"><span class="menu-item__name">Branzino alla brace</span><span class="menu-item__dots" aria-hidden="true"></span><span class="menu-item__price">36</span></p><p class="menu-item__desc">Whole sea bass, salsa verde, grilled lemon</p></li>
+              <li class="menu-item"><p class="menu-item__row"><span class="menu-item__name">Pollo al mattone</span><span class="menu-item__dots" aria-hidden="true"></span><span class="menu-item__price">31</span></p><p class="menu-item__desc">Brick-pressed chicken, Calabrian chilli, roast potatoes</p></li>
+            </ul>
+          </div>
+          <div class="menu-panel" role="tabpanel" id="panel-dolci" aria-labelledby="tab-dolci" tabindex="0" hidden>
+            <ul class="menu-list">
+              <li class="menu-item"><p class="menu-item__row"><span class="menu-item__name">Tiramisù</span><span class="menu-item__dots" aria-hidden="true"></span><span class="menu-item__price">12</span></p><p class="menu-item__desc">Espresso-soaked savoiardi, mascarpone, cocoa</p></li>
+              <li class="menu-item"><p class="menu-item__row"><span class="menu-item__name">Panna cotta</span><span class="menu-item__dots" aria-hidden="true"></span><span class="menu-item__price">11</span></p><p class="menu-item__desc">Vanilla bean, ember-roasted figs, honey</p></li>
+              <li class="menu-item"><p class="menu-item__row"><span class="menu-item__name">Affogato</span><span class="menu-item__dots" aria-hidden="true"></span><span class="menu-item__price">9</span></p><p class="menu-item__desc">Fior di latte gelato, double espresso</p></li>
+              <li class="menu-item"><p class="menu-item__row"><span class="menu-item__name">Cannoli siciliani</span><span class="menu-item__dots" aria-hidden="true"></span><span class="menu-item__price">10</span></p><p class="menu-item__desc">Sweet ricotta, pistachio, candied orange</p></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== GUSTO LETTER GRID ===================== -->
+    <section class="gusto" aria-label="Brace, fumo, calore, sapore, Italia: ember, smoke, warmth, flavour, Italy">
+      <span class="ghost ghost--tl" aria-hidden="true" data-parallax="-0.08">Fuoco</span>
+      <span class="ghost ghost--br" aria-hidden="true" data-parallax="0.08">Italia</span>
+      <div class="container gusto__inner">
+        <figure class="gusto__side" data-reveal>
+          <img src="assets/img/tile-01.jpg" width="520" height="520" alt="" loading="lazy">
+        </figure>
+        <div class="gusto__panel" data-reveal style="--i:1">
+          <p class="eyebrow gusto__eyebrow">The modern Italian grill</p>
+          <div class="gusto__stage">
+          <div class="gusto__grid" aria-hidden="true">
+            <p class="gusto__row"><span>B</span><span>R</span><span>A</span><span>C</span><span>E</span></p>
+            <p class="gusto__row"><span>F</span><span>U</span><span>M</span><span>O</span></p>
+            <p class="gusto__row"><span>C</span><span>A</span><span>L</span><span>O</span><span>R</span><span>E</span></p>
+            <p class="gusto__row"><span>S</span><span>A</span><span>P</span><span>O</span><span>R</span><span>E</span></p>
+            <p class="gusto__row"><span>I</span><span>T</span><span>A</span><span>L</span><span>I</span><span>A</span></p>
+          </div>
+          <div class="gusto__dish" data-parallax="-0.1" aria-hidden="true">
+            <img src="assets/img/gusto-dish.png" width="900" height="900" alt="" loading="lazy">
+          </div>
+          </div>
+          <p class="eyebrow gusto__caption">Ember · Smoke · Warmth · Flavour · Italy</p>
+        </div>
+        <figure class="gusto__side" data-reveal style="--i:2">
+          <img src="assets/img/tile-06.jpg" width="520" height="520" alt="" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===================== PRIVATE EVENTS CAROUSEL ===================== -->
+    <section class="events section--cream" id="events" aria-labelledby="events-title">
+      <div class="container">
+        <header class="section-head">
+          <div>
+            <p class="eyebrow eyebrow--red" data-reveal>Private events</p>
+            <h2 class="display section-head__title" id="events-title" data-reveal>Catering &amp; private dining</h2>
+          </div>
+          <div class="section-head__aside" data-reveal style="--i:1">
+            <p>Make Fiamma part of your next occasion. From office lunches to family celebrations, our team builds chef-driven menus and an evening that runs itself.</p>
+            <a class="link-arrow" href="mailto:events@fiamma.example">Plan your event <span aria-hidden="true">↗</span></a>
+          </div>
+        </header>
+
+        <div class="carousel" data-carousel>
+          <ul class="carousel__track" data-carousel-track tabindex="0" aria-label="Private event formats">
+            <li class="event-card">
+              <figure class="event-card__media"><img src="assets/img/events-corporate.jpg" width="1000" height="1100" alt="A long table set for a corporate dinner" loading="lazy"></figure>
+              <h3 class="event-card__title">Corporate events</h3>
+              <p>Impress clients and colleagues with a menu tailored to your schedule and guest list.</p>
+            </li>
+            <li class="event-card">
+              <figure class="event-card__media"><img src="assets/img/events-private.jpg" width="1000" height="1100" alt="The private dining room with candles lit" loading="lazy"></figure>
+              <h3 class="event-card__title">Private dining</h3>
+              <p>Reserve our private room for up to 24 guests, with curated courses and wine pairings.</p>
+            </li>
+            <li class="event-card">
+              <figure class="event-card__media"><img src="assets/img/events-wedding.jpg" width="1000" height="1100" alt="A wedding table with flowers and glassware" loading="lazy"></figure>
+              <h3 class="event-card__title">Weddings &amp; celebrations</h3>
+              <p>From rehearsal dinners to reception feasts, menus worthy of life’s biggest moments.</p>
+            </li>
+            <li class="event-card">
+              <figure class="event-card__media"><img src="assets/img/events-chef-table.jpg" width="1000" height="1100" alt="Guests seated at the counter facing the fire" loading="lazy"></figure>
+              <h3 class="event-card__title">Chef’s table</h3>
+              <p>Eight seats facing the fire, and a tasting menu cooked in front of you.</p>
+            </li>
+          </ul>
+          <div class="carousel__controls">
+            <button class="carousel__btn" type="button" data-carousel-prev aria-label="Previous event format">←</button>
+            <button class="carousel__btn" type="button" data-carousel-next aria-label="Next event format">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EXPERIENCES ===================== -->
+    <section class="experiences section--cream" id="experiences" aria-labelledby="exp-title">
+      <div class="container">
+        <header class="section-head">
+          <div>
+            <p class="eyebrow eyebrow--red" data-reveal>Upcoming events</p>
+            <h2 class="display section-head__title" id="exp-title" data-reveal>Experiences</h2>
+          </div>
+          <div class="section-head__aside" data-reveal style="--i:1">
+            <p>Every month we open the doors for something different: wine dinners, cooking classes and long Sunday lunches, all aimed at bringing you closer to Italian culture.</p>
+          </div>
+        </header>
+
+        <div class="exp-grid" data-stagger>
+          <article class="exp-card" data-reveal>
+            <figure class="exp-card__media"><img src="assets/img/exp-brunch-art.jpg" width="1000" height="1000" alt="Paintings hung above the dining room" loading="lazy"></figure>
+            <p class="exp-card__date"><time datetime="2026-12-06">Dec 06 · 2026</time></p>
+            <h3 class="exp-card__title">Brunch with the artists</h3>
+            <p class="exp-card__time">11:00 am – 1:30 pm</p>
+            <a class="btn btn--red btn--small" href="#reserve">Get ticket <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="exp-card" data-reveal>
+            <figure class="exp-card__media"><img src="assets/img/exp-negroni.jpg" width="1000" height="1000" alt="A negroni with an orange twist" loading="lazy"></figure>
+            <p class="exp-card__date"><time datetime="2026-12-12">Dec 12 · 2026</time></p>
+            <h3 class="exp-card__title">Negroni masterclass</h3>
+            <p class="exp-card__time">6:00 pm – 7:30 pm</p>
+            <a class="btn btn--red btn--small" href="#reserve">Get ticket <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="exp-card" data-reveal>
+            <figure class="exp-card__media"><img src="assets/img/exp-wine.jpg" width="1000" height="1000" alt="Red wine being poured into a glass" loading="lazy"></figure>
+            <p class="exp-card__date"><time datetime="2027-01-16">Jan 16 · 2027</time></p>
+            <h3 class="exp-card__title">Barolo by the fire</h3>
+            <p class="exp-card__time">7:00 pm – 10:00 pm</p>
+            <a class="btn btn--red btn--small" href="#reserve">Get ticket <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== RESERVATION ===================== -->
+    <section class="reserve" id="reserve" aria-labelledby="reserve-title">
+      <div class="reserve__bg" aria-hidden="true" data-parallax="0.12">
+        <img src="assets/img/reserve-bg.jpg" width="2000" height="1200" alt="" loading="lazy">
+      </div>
+      <div class="container reserve__inner">
+        <div class="reserve__intro">
+          <p class="eyebrow" data-reveal>Reservations</p>
+          <h2 class="display reserve__title split" id="reserve-title" data-reveal>
+            <span class="line" style="--i:0"><span>Reserve</span></span>
+            <span class="line" style="--i:1"><span>your table</span></span>
+          </h2>
+          <p class="reserve__lead" data-reveal>Book up to 12 guests online. For larger parties or private hire, call us or email <a href="mailto:events@fiamma.example">events@fiamma.example</a>.</p>
+          <p class="reserve__note" data-reveal>Closed Mondays. Walk-ins welcome at the bar.</p>
+        </div>
+
+        <div class="reserve__card" data-reveal style="--i:1">
+          <form class="reserve-form" data-reserve-form novalidate>
+            <div class="form-grid">
+              <div class="field field--full">
+                <label for="r-name">Full name</label>
+                <input id="r-name" name="name" type="text" autocomplete="name" required aria-describedby="r-name-err">
+                <p class="field__error" id="r-name-err"></p>
+              </div>
+              <div class="field">
+                <label for="r-email">Email</label>
+                <input id="r-email" name="email" type="email" autocomplete="email" required aria-describedby="r-email-err">
+                <p class="field__error" id="r-email-err"></p>
+              </div>
+              <div class="field">
+                <label for="r-phone">Phone</label>
+                <input id="r-phone" name="phone" type="tel" autocomplete="tel" required pattern="[0-9 +\(\)\-]{7,}" aria-describedby="r-phone-err">
+                <p class="field__error" id="r-phone-err"></p>
+              </div>
+              <div class="field">
+                <label for="r-date">Date</label>
+                <input id="r-date" name="date" type="date" required aria-describedby="r-date-err">
+                <p class="field__error" id="r-date-err"></p>
+              </div>
+              <div class="field">
+                <label for="r-time">Time</label>
+                <select id="r-time" name="time" required aria-describedby="r-time-err">
+                  <option value="">Choose a date first</option>
+                </select>
+                <p class="field__error" id="r-time-err"></p>
+              </div>
+              <div class="field field--full">
+                <label for="r-guests">Guests</label>
+                <select id="r-guests" name="guests" required aria-describedby="r-guests-err">
+                  <option value="2" selected>2 guests</option>
+                </select>
+                <p class="field__error" id="r-guests-err"></p>
+              </div>
+              <div class="field field--full">
+                <label for="r-notes">Notes <span class="field__optional">(optional)</span></label>
+                <textarea id="r-notes" name="notes" rows="3" placeholder="Allergies, celebrations, seating preferences"></textarea>
+              </div>
+            </div>
+            <p class="form-status" role="status" aria-live="polite" data-form-status></p>
+            <button class="btn btn--red btn--block" type="submit">Request reservation <span aria-hidden="true">↗</span></button>
+          </form>
+
+          <div class="reserve-success" data-reserve-success tabindex="-1" hidden>
+            <svg class="monogram reserve-success__mono" aria-hidden="true"><use href="#monogram"/></svg>
+            <h3 class="display">Grazie!</h3>
+            <p data-success-message>Your request is in. We’ll confirm by email shortly.</p>
+            <button class="link-arrow" type="button" data-reserve-again>Make another booking <span aria-hidden="true">↗</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer" id="visit">
+    <div class="site-footer__inner">
+      <div class="site-footer__brand">
+        <svg class="monogram site-footer__mono" aria-hidden="true"><use href="#monogram"/></svg>
+        <p class="display site-footer__signoff">L’Italia,<br>accesa dal<br>fuoco.</p>
+      </div>
+
+      <div class="site-footer__main">
+        <form class="newsletter" data-newsletter>
+          <label class="footer-heading" for="nl-email">Join our newsletter</label>
+          <p class="newsletter__copy">Seasonal menus, events and first access to our wine dinners.</p>
+          <div class="newsletter__field">
+            <input id="nl-email" name="email" type="email" placeholder="Your email address" autocomplete="email" required>
+            <button type="submit" aria-label="Subscribe">→</button>
+          </div>
+          <p class="newsletter__status" role="status" aria-live="polite" data-newsletter-status></p>
+        </form>
+
+        <div class="site-footer__cols">
+          <nav aria-label="Footer">
+            <h2 class="footer-heading">Navigation</h2>
+            <ul class="footer-links">
+              <li><a href="#reserve">Reservations</a></li>
+              <li><a href="#menu">Menu</a></li>
+              <li><a href="#events">Private events</a></li>
+              <li><a href="#experiences">Experiences</a></li>
+              <li><a href="style-guide.html">Brand guide</a></li>
+            </ul>
+          </nav>
+          <div>
+            <h2 class="footer-heading">Opening hours</h2>
+            <dl class="hours">
+              <div><dt>Tuesday – Friday · Lunch</dt><dd>12:00 – 2:30 pm</dd></div>
+              <div><dt>Tuesday – Thursday · Dinner</dt><dd>5:30 – 10:00 pm</dd></div>
+              <div><dt>Friday – Saturday · Dinner</dt><dd>5:30 – 11:00 pm</dd></div>
+              <div><dt>Saturday – Sunday · Brunch</dt><dd>11:00 am – 2:30 pm</dd></div>
+              <div><dt>Sunday · Dinner</dt><dd>5:00 – 9:30 pm</dd></div>
+              <div><dt>Monday</dt><dd>Closed</dd></div>
+            </dl>
+          </div>
+          <address>
+            <h2 class="footer-heading">Contact us</h2>
+            <p class="footer-label">Address</p>
+            <p><a href="https://maps.google.com/?q=21+Ember+Lane" rel="noopener">21 Ember Lane<br>Your City, 00000</a></p>
+            <p class="footer-label">Phone</p>
+            <p><a href="tel:+10005550142">(000) 555-0142</a></p>
+            <p class="footer-label">Email</p>
+            <p><a href="mailto:ciao@fiamma.example">ciao@fiamma.example</a></p>
+            <p class="footer-label">Press</p>
+            <p><a href="mailto:press@fiamma.example">press@fiamma.example</a></p>
+          </address>
+        </div>
+
+        <div class="site-footer__legal">
+          <p><a href="#">Privacy policy</a> <span aria-hidden="true">|</span> <a href="#">Terms</a> <span aria-hidden="true">|</span> <a href="#">Accessibility</a></p>
+          <p>© <span data-year>2026</span> Fiamma Cucina &amp; Bar. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

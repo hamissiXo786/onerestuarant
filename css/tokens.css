@@ -1,0 +1,43 @@
+/* ==========================================================================
+   Fiamma brand tokens: the single source of truth for colour, type,
+   spacing and motion. Change the brand here and both pages follow.
+   ========================================================================== */
+:root {
+  /* Colour */
+  --red: #8c0a06;          /* signature red: panels, headings on cream */
+  --red-bright: #a8100a;   /* buttons, active states */
+  --red-deep: #6e0704;     /* button hover */
+  --ember: #4a0905;        /* oxblood: secondary panels, footer */
+  --ember-deep: #2a0503;   /* gradients, collage centre */
+  --char: #0e0c0b;         /* near-black: dark sections, solid header */
+  --cream: #f4e8dc;        /* text on red/dark, light sections */
+  --cream-2: #eadacb;      /* card borders, rules on cream */
+  --cream-dim: rgb(244 232 220 / 0.74); /* secondary text on dark */
+  --ink: #241612;          /* body text on cream */
+  --ink-dim: #5b4740;      /* secondary text on cream */
+
+  /* Type */
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  --font-sans: "Jost", "Century Gothic", system-ui, sans-serif;
+  --font-mark: "Antonio", "Arial Narrow", sans-serif;
+
+  --fs-hero: clamp(2.9rem, 7.2vw, 6.75rem);
+  --fs-h1: clamp(2.5rem, 5.4vw, 4.75rem);
+  --fs-h2: clamp(2.1rem, 4.2vw, 3.6rem);
+  --fs-h3: clamp(1.45rem, 2.1vw, 1.95rem);
+  --fs-lead: clamp(1.05rem, 1.3vw, 1.2rem);
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-eyebrow: 0.72rem;
+
+  /* Space */
+  --gutter: clamp(16px, 4vw, 56px);
+  --section-y: clamp(80px, 11vw, 168px);
+  --maxw: 1360px;
+  --gap: clamp(16px, 2vw, 28px);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur: 900ms;
+}
