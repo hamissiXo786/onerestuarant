@@ -1,43 +1,48 @@
 /* ==========================================================================
-   Fiamma brand tokens: the single source of truth for colour, type,
-   spacing and motion. Change the brand here and both pages follow.
+   ONƎ Restaurant | Lounge: brand tokens (single source of truth).
+   Taken from the venue's Instagram: black + brass gold signage, emerald
+   velvet and tiles, champagne brunch posters, turquoise pool.
    ========================================================================== */
 :root {
+  color-scheme: dark;
+
   /* Colour */
-  --red: #8c0a06;          /* signature red: panels, headings on cream */
-  --red-bright: #a8100a;   /* buttons, active states */
-  --red-deep: #6e0704;     /* button hover */
-  --ember: #4a0905;        /* oxblood: secondary panels, footer */
-  --ember-deep: #2a0503;   /* gradients, collage centre */
-  --char: #0e0c0b;         /* near-black: dark sections, solid header */
-  --cream: #f4e8dc;        /* text on red/dark, light sections */
-  --cream-2: #eadacb;      /* card borders, rules on cream */
-  --cream-dim: rgb(244 232 220 / 0.74); /* secondary text on dark */
-  --ink: #241612;          /* body text on cream */
-  --ink-dim: #5b4740;      /* secondary text on cream */
+  --black: #0d100f;          /* near-black with a green bias: page ground */
+  --black-2: #151a18;        /* raised dark surfaces */
+  --emerald: #123f33;        /* velvet booths, tiled sign wall: main panels */
+  --emerald-deep: #0a2820;   /* secondary panels, footer */
+  --emerald-ink: #0f3a2e;    /* emerald used as text on champagne */
+  --gold: #c9a55c;           /* brass signage: buttons, rules, accents */
+  --gold-soft: #e2c88a;      /* gold text on dark */
+  --gold-deep: #a9853f;      /* button hover */
+  --champagne: #f2e9da;      /* brunch posters: light sections, text on dark */
+  --champagne-2: #e4d6bf;    /* borders on champagne */
+  --champagne-dim: rgb(242 233 218 / 0.74);
+  --ink: #1b1d1a;            /* body text on champagne */
+  --ink-dim: #575a52;        /* secondary text on champagne */
+  --pool: #3fd3c6;           /* sign halo / pool: tiny accents only */
 
   /* Type */
-  --font-display: "Cormorant Garamond", "Times New Roman", serif;
-  --font-sans: "Jost", "Century Gothic", system-ui, sans-serif;
-  --font-mark: "Antonio", "Arial Narrow", sans-serif;
+  --font-display: "Bodoni Moda", "Didot", "Times New Roman", serif;
+  --font-sans: "Josefin Sans", "Futura", "Century Gothic", system-ui, sans-serif;
+  --font-script: "Pinyon Script", "Snell Roundhand", cursive;
 
-  --fs-hero: clamp(2.9rem, 7.2vw, 6.75rem);
-  --fs-h1: clamp(2.5rem, 5.4vw, 4.75rem);
-  --fs-h2: clamp(2.1rem, 4.2vw, 3.6rem);
-  --fs-h3: clamp(1.45rem, 2.1vw, 1.95rem);
+  --fs-hero: clamp(2.6rem, 6.4vw, 6rem);
+  --fs-h1: clamp(2.3rem, 4.8vw, 4.25rem);
+  --fs-h2: clamp(1.9rem, 3.8vw, 3.2rem);
+  --fs-h3: clamp(1.3rem, 1.9vw, 1.7rem);
   --fs-lead: clamp(1.05rem, 1.3vw, 1.2rem);
-  --fs-body: 1rem;
-  --fs-small: 0.875rem;
-  --fs-eyebrow: 0.72rem;
+  --fs-body: 1.0625rem;
+  --fs-small: 0.9rem;
+  --fs-eyebrow: 0.74rem;
 
   /* Space */
   --gutter: clamp(16px, 4vw, 56px);
-  --section-y: clamp(80px, 11vw, 168px);
+  --section-y: clamp(80px, 10vw, 160px);
   --maxw: 1360px;
   --gap: clamp(16px, 2vw, 28px);
 
   /* Motion */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
   --dur: 900ms;
 }

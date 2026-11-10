@@ -1,12 +1,12 @@
-# Fiamma · Cucina & Bar
+# ONƎ Restaurant | Lounge website
 
-A restaurant website and brand guide for **Fiamma**, a placeholder wood-fire Italian restaurant. The design is inspired by
-Brickclay's ["ENZO" Dribbble shot](https://dribbble.com/shots/27587971-ENZO-Restaurant-Branding-Identity-and-Web-Design):
-deep reds, serif capitals, Italian word stacks and photo collages. All content here (name, logo, copy, images) is original.
-See [`docs/reference-notes.md`](docs/reference-notes.md) for the full study of the reference.
+Website and brand guide for **One Restaurant and Lounge**, 70 Alan Paton Rd, Glenwood, Durban
+([@onerestaurantandlounge](https://www.instagram.com/onerestaurantandlounge/)).
+The layout system is inspired by Brickclay's [ENZO Dribbble shot](https://dribbble.com/shots/27587971-ENZO-Restaurant-Branding-Identity-and-Web-Design)
+([notes](docs/reference-notes.md)). Colours, type, photos and copy come from One's own Instagram ([brand notes](docs/brand-notes.md)).
 
-- `index.html`: one-page site (hero, story + ring collage, manifesto, chef, tabbed menu, letter grid, private events carousel, experiences, reservation form, footer)
-- `style-guide.html`: brand guide (logo, colour, type, motifs, components, applications, photography)
+- `index.html`: one-page site with hero, welcome + ring collage, Social Brunch, specials, tabbed menu, the lounge, celebrations, WhatsApp booking and footer
+- `style-guide.html`: brand guide covering logo, colour, type, motifs, components and photography
 
 Plain HTML, CSS and JavaScript: no build step and no dependencies.
 
@@ -14,51 +14,38 @@ Plain HTML, CSS and JavaScript: no build step and no dependencies.
 ```bash
 python3 -m http.server 8000
 ```
-Then open http://localhost:8000 (or any static server, or just double-click `index.html`).
+Then open http://localhost:8000.
 
-## Make it yours
+## Before going live: things to confirm with One
+1. **Opening hours** are placeholders (Tue–Thu 12–22, Fri–Sat 12–late, Sun 12–20, Mon closed). Update both:
+   - the "Opening hours" list in the footer of `index.html`
+   - `CONFIG.HOURS` in `js/main.js` (this drives the booking time slots)
+2. **Photos** are low-resolution crops from Instagram. Replace each `assets/img/one-*.jpg` with the original
+   under the same filename (portrait 4:5 works everywhere; the platter crop is landscape).
+3. **Logo**: the ONƎ mark is redrawn as SVG (`<symbol id="one-mark">` at the top of each page and
+   `assets/logo/one-logo.svg`). Swap in the official file if it differs.
+4. **Menu**: only prices advertised on Instagram are shown; other items say "Ask us". Edit the `menu-panel`
+   lists in `index.html`.
+
+## How bookings work
+One takes reservations on WhatsApp, so the form doesn't need a server. Guests choose a date, time, party size
+and occasion. The form checks that the date isn't past, isn't a closed day and has open slots. It then writes the
+message and shows an **Open WhatsApp** button (`https://wa.me/27650793825?text=…`) plus **Copy message**.
+The number is set in `CONFIG.WHATSAPP_NUMBER`. Buttons such as "Book brunch" pre-select the occasion.
+
+## Customise
 | What | Where |
 |---|---|
-| Name, copy, address, phone, emails | `index.html` (search for `Fiamma`, `Ember Lane`, `555-0142`, `fiamma.example`) |
-| Colours, fonts, type sizes, spacing | `css/tokens.css` |
-| Logo | Wordmark is live text (`.wordmark` in `css/main.css`); monogram is the `<symbol id="monogram">` near the top of each page and `assets/logo/*.svg` |
-| Menu dishes and prices | The `menu-panel` lists in `index.html` |
-| Events and experiences | The `event-card` / `exp-card` blocks in `index.html` |
-| Opening hours | **Both** the footer in `index.html` and `CONFIG.HOURS` in `js/main.js` (drives the booking time slots) |
-| Booking rules | `CONFIG` at the top of `js/main.js` (max guests, days ahead, slot length, last seating) |
-
-### Reservations
-Set `CONFIG.FORM_ENDPOINT` in `js/main.js` to a form service URL (e.g. [Formspree](https://formspree.io),
-Getform, or Netlify Forms) to receive bookings by email. With no endpoint, the form opens the guest's email app with
-the request filled in, addressed to `CONFIG.RESERVATION_EMAIL`. Validation covers past dates, closed days
-(Mondays), dates too far ahead, opening-hour time slots and large parties.
-
-The newsletter form only shows a confirmation for now. Connect it to Mailchimp, Buttondown or similar when ready.
-
-### Photos
-Every image in `assets/img/` is a **generated placeholder** (moody bokeh with a small "PLACEHOLDER" label). Replace each
-file with real photography under the same filename:
-
-| File | Use | Suggested size |
-|---|---|---|
-| `hero-interior.jpg` | Hero: dining room at night | 2000×1200 |
-| `story-chef.jpg` | Chef card | 1200×1400 |
-| `manifesto-guests.jpg` | Word-stack section: guests | 1200×1400 |
-| `menu-bg.jpg` | Menu background: signature dish | 2000×1200 |
-| `reserve-bg.jpg` | Reservation background: bar | 2000×1200 |
-| `tile-01…12.jpg` | Ring collage (food, guests, wine, room) | 520×520 |
-| `events-*.jpg` | Private events cards | 1000×1100 |
-| `exp-*.jpg` | Experience cards | 1000×1000 |
-| `gusto-dish.png` | Cut-out dish over the letter grid (**transparent PNG**) | 900×900 |
-
-Shoot in low, warm light. Dark backgrounds suit the red palette best.
+| Colours, fonts, sizes | `css/tokens.css` |
+| Copy, specials, celebrations | `index.html` |
+| Booking rules (max guests, days ahead, slot length) | `CONFIG` in `js/main.js` |
+| Brand guide styles | `css/style-guide.css` |
 
 ## Motion & accessibility
-- Scroll reveals, line-by-line headline reveals, ring collage assembly, parallax, header hide/show: all vanilla JS.
-- Fully disabled for visitors with *reduce motion* turned on; content stays visible if JavaScript fails.
-- Keyboard-operable menu tabs (arrow keys), carousel and mobile menu (Esc closes); visible focus styles; skip link.
-- Cream on Fiamma Red is about 8:1 contrast.
+Scroll reveals, ring-collage assembly, parallax and header hide/show are all vanilla JS. They switch off for
+*reduce motion*, and content stays visible without JavaScript. Menu tabs, carousel and mobile menu work from the
+keyboard, and focus styles are visible.
 
 ## Deploy
-**GitHub Pages:** Settings → Pages → *Deploy from a branch* → pick the branch and `/ (root)`.
-**Netlify:** drag the folder onto app.netlify.com/drop, or connect the repo (no build command, publish directory `.`).
+**GitHub Pages:** Settings → Pages → deploy from this branch, root folder.
+**Netlify:** drag the folder onto app.netlify.com/drop (no build command, publish directory `.`).

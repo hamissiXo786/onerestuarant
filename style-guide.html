@@ -1,31 +1,34 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en-ZA" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Fiamma Brand Guide</title>
-  <meta name="description" content="Fiamma brand identity: logo, colour, typography, motifs and components.">
-  <meta name="theme-color" content="#8c0a06">
+  <title>ONƎ Brand Guide</title>
+  <meta name="description" content="ONƎ Restaurant | Lounge brand guide: logo, colour, typography, motifs, components and photography.">
+  <meta name="theme-color" content="#0d100f">
   <link rel="icon" href="assets/logo/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Antonio:wght@500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Josefin+Sans:wght@300;400;600&family=Pinyon+Script&display=swap">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/style-guide.css">
   <script>document.documentElement.classList.replace('no-js', 'js');</script>
 </head>
 <body class="sg">
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <symbol id="monogram" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-      <ellipse cx="50" cy="50" rx="40" ry="45"/>
-      <path d="M43 74 L49 32 H66"/>
-      <path d="M46 52 H60"/>
-      <path d="M49 32 C44 25 50 20 48 13 C55 19 57 26 49 32 Z" fill="currentColor" stroke-width="1.5"/>
+    <symbol id="one-mark" viewBox="0 0 250 90" fill="none" stroke="currentColor" stroke-width="5">
+      <circle cx="40" cy="45" r="36"/>
+      <path d="M100 81V9l54 72V9"/>
+      <path d="M242 9v72M242 9h-50M242 45h-44M242 81h-50"/>
     </symbol>
   </svg>
 
   <header class="sg-header">
-    <a class="wordmark" href="index.html">Fiamma</a>
+    <a class="brand" href="index.html" aria-label="Back to the One website">
+      <svg class="brand__mark" aria-hidden="true"><use href="#one-mark"/></svg>
+      <span class="brand__tag">Restaurant | Lounge</span>
+    </a>
     <nav aria-label="Brand guide sections">
       <ul class="sg-nav">
         <li><a href="#logo">Logo</a></li>
@@ -33,235 +36,164 @@
         <li><a href="#type">Type</a></li>
         <li><a href="#motifs">Motifs</a></li>
         <li><a href="#components">Components</a></li>
-        <li><a href="#applications">Applications</a></li>
         <li><a href="#photography">Photography</a></li>
       </ul>
     </nav>
-    <a class="link-arrow link-arrow--light" href="index.html">Back to site <span aria-hidden="true">↗</span></a>
+    <a class="link-arrow link-arrow--gold" href="index.html">Back to site <span aria-hidden="true">↗</span></a>
   </header>
 
   <main>
-    <!-- Cover -->
     <section class="sg-cover">
-      <p class="eyebrow">Fiamma presents</p>
-      <div class="sg-cover__mark">
-        <svg class="sg-arc" viewBox="0 0 400 200" aria-hidden="true">
-          <defs><path id="arc" d="M40 190 A160 160 0 0 1 360 190"/></defs>
-          <text><textPath href="#arc" startOffset="50%" text-anchor="middle">ITALIAN · FLAME</textPath></text>
-        </svg>
-        <svg class="monogram sg-cover__mono" aria-hidden="true"><use href="#monogram"/></svg>
-      </div>
-      <div class="sg-cover__meta">
-        <p>Fiamma<br>Cucina &amp; Bar</p>
-        <p>Rooted in Italy<br>Cooked over oak</p>
-      </div>
+      <p class="eyebrow eyebrow--gold">Glenwood · Durban</p>
+      <svg class="sg-cover__mark" role="img" aria-label="ONƎ"><use href="#one-mark"/></svg>
+      <p class="sg-cover__tag">Restaurant | Lounge</p>
       <h1 class="display sg-cover__title">Brand guide</h1>
-      <p class="sg-cover__lead">Fiamma is a wood-fire Italian kitchen: warm, confident and a little theatrical. The identity borrows from the glow of embers and the rhythm of an Italian table. Deep reds, cream paper, tall serif capitals and a precise geometric sans.</p>
+      <p class="sg-cover__lead">One is where sophistication meets comfort. The identity comes straight from the room: brass letters glowing on green tiles, velvet booths, ring lights overhead, and champagne-coloured brunch posters with a little script flourish.</p>
     </section>
 
-    <!-- Logo -->
     <section class="sg-section" id="logo" aria-labelledby="logo-title">
       <header class="sg-section__head">
-        <p class="eyebrow">01</p>
         <h2 class="display" id="logo-title">Logo</h2>
-        <p>A condensed, forward-leaning wordmark set in Antonio and skewed 9°, paired with a monogram: a hand-drawn F inside an oval, its stem lit by a single flame. Use the wordmark in navigation and signage, and the monogram where space is tight (favicons, embroidery, stamps).</p>
+        <p>The wordmark is three monoline letters: a perfect circle O, an N and a mirrored E. Underneath, “Restaurant | Lounge” is set in small, widely spaced serif capitals. Use it in black on white (as on Instagram), in brass gold on dark or green, or in champagne on black. This drawn version is a stand-in for the official logo file.</p>
       </header>
       <div class="sg-logo-grid">
-        <div class="sg-tile sg-tile--red"><span class="wordmark sg-wordmark">Fiamma</span><span class="sg-tile__label">Primary · on red</span></div>
-        <div class="sg-tile sg-tile--char"><span class="wordmark sg-wordmark">Fiamma</span><span class="sg-tile__label">On char</span></div>
-        <div class="sg-tile sg-tile--cream"><span class="wordmark sg-wordmark">Fiamma</span><span class="sg-tile__label">On cream</span></div>
-        <div class="sg-tile sg-tile--ember"><svg class="monogram sg-mono-lg" aria-hidden="true"><use href="#monogram"/></svg><span class="sg-tile__label">Monogram</span></div>
-        <div class="sg-tile sg-tile--cream sg-clearspace"><span class="sg-clearspace__box"><svg class="monogram sg-mono-md" aria-hidden="true"><use href="#monogram"/></svg></span><span class="sg-tile__label">Clear space = ½ monogram width</span></div>
-        <div class="sg-tile sg-tile--char"><img src="assets/logo/favicon.svg" alt="Fiamma favicon" width="96" height="96"><span class="sg-tile__label">Favicon / app icon</span></div>
+        <div class="sg-tile sg-tile--white"><div class="sg-logo"><svg aria-hidden="true"><use href="#one-mark"/></svg><span>Restaurant | Lounge</span></div><span class="sg-tile__label">Black on white</span></div>
+        <div class="sg-tile sg-tile--emerald"><div class="sg-logo sg-logo--gold"><svg aria-hidden="true"><use href="#one-mark"/></svg><span>Restaurant | Lounge</span></div><span class="sg-tile__label">Brass on emerald</span></div>
+        <div class="sg-tile sg-tile--black"><div class="sg-logo"><svg aria-hidden="true"><use href="#one-mark"/></svg><span>Restaurant | Lounge</span></div><span class="sg-tile__label">Champagne on black</span></div>
+        <div class="sg-tile sg-tile--black"><img src="assets/logo/favicon.svg" alt="Round ONƎ avatar" width="120" height="120"><span class="sg-tile__label">Avatar / favicon</span></div>
+        <figure class="sg-tile sg-tile--photo"><img src="assets/img/one-sign.jpg" alt="The ONƎ sign glowing on green tiles" width="348" height="432" loading="lazy"><span class="sg-tile__label">Signage: brass with a pool-blue halo</span></figure>
+        <figure class="sg-tile sg-tile--photo"><img src="assets/img/one-team.jpg" alt="Team member in a black polo with gold ONƎ embroidery" width="350" height="432" loading="lazy"><span class="sg-tile__label">Uniform: gold on black polo</span></figure>
       </div>
     </section>
 
-    <!-- Colour -->
     <section class="sg-section" id="colour" aria-labelledby="colour-title">
       <header class="sg-section__head">
-        <p class="eyebrow">02</p>
         <h2 class="display" id="colour-title">Colour</h2>
-        <p>Red leads. Oxblood and char add depth for evening moods, and cream gives the light sections their paper-like calm. Avoid pure white and pure black.</p>
+        <p>Black and emerald set the evening mood; brass gold is the accent for buttons, rules and the logo; champagne carries the daytime brunch sections. Pool blue appears only as a glow.</p>
       </header>
       <ul class="sg-swatches">
-        <li class="sg-swatch" style="--sw:var(--red)"><span class="sg-swatch__chip"></span><strong>Fiamma Red</strong><code>#8C0A06</code><span>Panels, headings on cream</span></li>
-        <li class="sg-swatch" style="--sw:var(--red-bright)"><span class="sg-swatch__chip"></span><strong>Ember Red</strong><code>#A8100A</code><span>Buttons, active states</span></li>
-        <li class="sg-swatch" style="--sw:var(--ember)"><span class="sg-swatch__chip"></span><strong>Oxblood</strong><code>#4A0905</code><span>Secondary panels, footer</span></li>
-        <li class="sg-swatch" style="--sw:var(--ember-deep)"><span class="sg-swatch__chip"></span><strong>Deep Ember</strong><code>#2A0503</code><span>Gradients, depth</span></li>
-        <li class="sg-swatch" style="--sw:var(--char)"><span class="sg-swatch__chip"></span><strong>Char</strong><code>#0E0C0B</code><span>Dark sections, header</span></li>
-        <li class="sg-swatch" style="--sw:var(--cream)"><span class="sg-swatch__chip"></span><strong>Cream</strong><code>#F4E8DC</code><span>Text on red, light sections</span></li>
-        <li class="sg-swatch" style="--sw:var(--ink)"><span class="sg-swatch__chip"></span><strong>Ink</strong><code>#241612</code><span>Body text on cream</span></li>
+        <li class="sg-swatch" style="--sw:var(--black)"><span class="sg-swatch__chip"></span><strong>Night</strong><code>#0D100F</code><span>Page background</span></li>
+        <li class="sg-swatch" style="--sw:var(--emerald)"><span class="sg-swatch__chip"></span><strong>Velvet Emerald</strong><code>#123F33</code><span>Panels, dark buttons</span></li>
+        <li class="sg-swatch" style="--sw:var(--emerald-deep)"><span class="sg-swatch__chip"></span><strong>Deep Emerald</strong><code>#0A2820</code><span>Footer, menus</span></li>
+        <li class="sg-swatch" style="--sw:var(--gold)"><span class="sg-swatch__chip"></span><strong>Brass Gold</strong><code>#C9A55C</code><span>Buttons, logo, rules</span></li>
+        <li class="sg-swatch" style="--sw:var(--gold-soft)"><span class="sg-swatch__chip"></span><strong>Soft Gold</strong><code>#E2C88A</code><span>Gold text on dark</span></li>
+        <li class="sg-swatch" style="--sw:var(--champagne)"><span class="sg-swatch__chip"></span><strong>Champagne</strong><code>#F2E9DA</code><span>Light sections, text on dark</span></li>
+        <li class="sg-swatch" style="--sw:var(--pool)"><span class="sg-swatch__chip"></span><strong>Pool Glow</strong><code>#3FD3C6</code><span>Halo accents only</span></li>
       </ul>
-      <p class="sg-note">Cream on Fiamma Red has a contrast ratio of about 8:1, which passes WCAG AA and AAA for body text.</p>
     </section>
 
-    <!-- Type -->
     <section class="sg-section" id="type" aria-labelledby="type-title">
       <header class="sg-section__head">
-        <p class="eyebrow">03</p>
         <h2 class="display" id="type-title">Typography</h2>
-        <p>Two families do all the work. Cormorant Garamond, set in capitals, brings elegance and an editorial voice to headlines. Jost, a clean geometric sans, gives labels and body copy clarity and modern structure.</p>
+        <p>Three voices, matching the brunch posters. Bodoni Moda capitals for headlines, Josefin Sans (a thin geometric close to the logo) for everything practical, and Pinyon Script used once per poster at most.</p>
       </header>
       <div class="sg-specimens">
-        <div class="sg-specimen sg-specimen--serif">
-          <p class="sg-specimen__glyphs">ABCDEFG<br>NOPQRS</p>
-          <p class="sg-specimen__name"><strong>Cormorant Garamond</strong> · Light, Regular, Medium · Display &amp; headlines, always uppercase, tight leading</p>
-        </div>
-        <div class="sg-specimen sg-specimen--sans">
-          <p class="sg-specimen__glyphs">ABCDEFG<br>NOPQRS</p>
-          <p class="sg-specimen__name"><strong>Jost</strong> · Light, Regular, Medium · Body copy, navigation and tracked eyebrows</p>
-        </div>
-      </div>
-      <div class="sg-scale">
-        <p class="display" style="font-size:var(--fs-hero)">Hero</p>
-        <p class="display" style="font-size:var(--fs-h1)">Headline one</p>
-        <p class="display" style="font-size:var(--fs-h2)">Headline two</p>
-        <p class="display" style="font-size:var(--fs-h3)">Card title</p>
-        <p class="eyebrow" style="margin:0">Eyebrow · 0.72rem · 0.26em tracking</p>
-        <p style="font-size:var(--fs-lead);max-width:56ch;margin:0">Lead paragraph. Our kitchen is built around a single oak fire, with Northern Italian technique and the patience of the grill.</p>
-        <p style="max-width:60ch;margin:0;color:var(--cream-dim)">Body copy. Jost Light at 16px with generous 1.65 line height keeps longer passages calm and readable on dark backgrounds.</p>
+        <div class="sg-specimen sg-specimen--display"><p class="sg-specimen__glyphs">Social<br>Brunch</p><p class="sg-specimen__name"><strong>Bodoni Moda</strong> · headlines, always uppercase</p></div>
+        <div class="sg-specimen sg-specimen--sans"><p class="sg-specimen__glyphs">ABCDEFG<br>NOPQRS</p><p class="sg-specimen__name"><strong>Josefin Sans</strong> · body, labels, buttons</p></div>
+        <div class="sg-specimen sg-specimen--script"><p class="sg-specimen__glyphs">Saturday</p><p class="sg-specimen__name"><strong>Pinyon Script</strong> · one flourish per layout</p></div>
       </div>
     </section>
 
-    <!-- Motifs -->
     <section class="sg-section" id="motifs" aria-labelledby="motifs-title">
       <header class="sg-section__head">
-        <p class="eyebrow">04</p>
-        <h2 class="display" id="motifs-title">Brand motifs</h2>
-        <p>Italian words carry the brand voice. Stack them, space them out, or let a dish break through them. Photos gather in a ring around an empty centre, like guests around a table.</p>
+        <h2 class="display" id="motifs-title">Motifs</h2>
+        <p>The ring lights become a ring of photos around the logo. Words stack like a menu board, alternating champagne and gold. Posters sit in a champagne card with a thin gold inner frame.</p>
       </header>
       <div class="sg-motifs">
-        <div class="sg-motif sg-motif--stack">
-          <ul class="word-stack sg-stack"><li>Fuoco</li><li>Sapore</li><li>Famiglia</li><li>Tavola</li><li>Italia</li></ul>
-          <span class="sg-tile__label">Word stack</span>
-        </div>
-        <div class="sg-motif sg-motif--grid">
-          <div class="gusto__grid sg-letters" aria-hidden="true">
-            <p class="gusto__row"><span>B</span><span>R</span><span>A</span><span>C</span><span>E</span></p>
-            <p class="gusto__row"><span>F</span><span>U</span><span>M</span><span>O</span></p>
-            <p class="gusto__row"><span>C</span><span>A</span><span>L</span><span>O</span><span>R</span><span>E</span></p>
-          </div>
-          <span class="sg-tile__label">Letter grid</span>
-        </div>
         <div class="sg-motif sg-motif--ring">
           <div class="ring sg-ring">
-            <div class="ring__centre"><svg class="monogram" aria-hidden="true"><use href="#monogram"/></svg></div>
-            <figure class="ring__tile"><img src="assets/img/tile-01.jpg" alt="" width="520" height="520" loading="lazy"></figure>
-            <figure class="ring__tile"><img src="assets/img/tile-02.jpg" alt="" width="520" height="520" loading="lazy"></figure>
-            <figure class="ring__tile"><img src="assets/img/tile-03.jpg" alt="" width="520" height="520" loading="lazy"></figure>
-            <figure class="ring__tile"><img src="assets/img/tile-04.jpg" alt="" width="520" height="520" loading="lazy"></figure>
-            <figure class="ring__tile"><img src="assets/img/tile-05.jpg" alt="" width="520" height="520" loading="lazy"></figure>
-            <figure class="ring__tile"><img src="assets/img/tile-06.jpg" alt="" width="520" height="520" loading="lazy"></figure>
-            <figure class="ring__tile"><img src="assets/img/tile-07.jpg" alt="" width="520" height="520" loading="lazy"></figure>
-            <figure class="ring__tile"><img src="assets/img/tile-08.jpg" alt="" width="520" height="520" loading="lazy"></figure>
-            <figure class="ring__tile"><img src="assets/img/tile-09.jpg" alt="" width="520" height="520" loading="lazy"></figure>
-            <figure class="ring__tile"><img src="assets/img/tile-10.jpg" alt="" width="520" height="520" loading="lazy"></figure>
-            <figure class="ring__tile"><img src="assets/img/tile-11.jpg" alt="" width="520" height="520" loading="lazy"></figure>
-            <figure class="ring__tile"><img src="assets/img/tile-12.jpg" alt="" width="520" height="520" loading="lazy"></figure>
+            <div class="ring__centre"><svg class="ring__mark" aria-hidden="true"><use href="#one-mark"/></svg></div>
+            <figure class="ring__tile"><img src="assets/img/one-tile-01.jpg" alt="" width="350" height="432" loading="lazy"></figure>
+            <figure class="ring__tile"><img src="assets/img/one-tile-02.jpg" alt="" width="348" height="432" loading="lazy"></figure>
+            <figure class="ring__tile"><img src="assets/img/one-tile-03.jpg" alt="" width="350" height="432" loading="lazy"></figure>
+            <figure class="ring__tile"><img src="assets/img/one-tile-04.jpg" alt="" width="350" height="432" loading="lazy"></figure>
+            <figure class="ring__tile"><img src="assets/img/one-tile-05.jpg" alt="" width="350" height="432" loading="lazy"></figure>
+            <figure class="ring__tile"><img src="assets/img/one-tile-06.jpg" alt="" width="350" height="432" loading="lazy"></figure>
+            <figure class="ring__tile"><img src="assets/img/one-tile-07.jpg" alt="" width="362" height="432" loading="lazy"></figure>
+            <figure class="ring__tile"><img src="assets/img/one-tile-08.jpg" alt="" width="350" height="432" loading="lazy"></figure>
+            <figure class="ring__tile"><img src="assets/img/one-tile-09.jpg" alt="" width="348" height="432" loading="lazy"></figure>
+            <figure class="ring__tile"><img src="assets/img/one-tile-10.jpg" alt="" width="350" height="432" loading="lazy"></figure>
+            <figure class="ring__tile"><img src="assets/img/one-tile-11.jpg" alt="" width="350" height="432" loading="lazy"></figure>
+            <figure class="ring__tile"><img src="assets/img/one-tile-12.jpg" alt="" width="350" height="432" loading="lazy"></figure>
           </div>
           <span class="sg-tile__label">Ring collage</span>
         </div>
+        <div class="sg-motif sg-motif--stack">
+          <ul class="word-stack sg-stack"><li>Brunch</li><li>Lounge</li><li>Poolside</li><li>Cocktails</li><li>Durban</li></ul>
+          <span class="sg-tile__label">Word stack</span>
+        </div>
+        <div class="sg-motif sg-motif--poster">
+          <div class="brunch__poster sg-poster">
+            <svg class="brunch__mark" aria-hidden="true"><use href="#one-mark"/></svg>
+            <p class="script brunch__script">Saturday</p>
+            <p class="display brunch__title">Social Brunch</p>
+            <p class="brunch__price"><span class="brunch__amount">R295</span> pp</p>
+          </div>
+          <span class="sg-tile__label">Poster card</span>
+        </div>
       </div>
     </section>
 
-    <!-- Components -->
     <section class="sg-section" id="components" aria-labelledby="components-title">
       <header class="sg-section__head">
-        <p class="eyebrow">05</p>
         <h2 class="display" id="components-title">Components</h2>
-        <p>Sharp corners, generous padding, tracked uppercase labels. Every link that leads somewhere ends in a “↗”.</p>
+        <p>Square corners, generous padding and tracked capitals. Gold buttons on dark, emerald buttons on champagne. Links that lead somewhere end in “↗”.</p>
       </header>
       <div class="sg-components">
-        <div class="sg-comp sg-tile--char">
-          <span class="sg-tile__label">Buttons &amp; links</span>
+        <div class="sg-comp sg-comp--dark">
+          <span class="sg-tile__label">Buttons on dark</span>
           <div class="sg-row">
-            <a class="btn btn--red" href="#components">Book a table</a>
-            <a class="btn btn--cream" href="#components">Book a table</a>
-            <a class="btn btn--ghost" href="#components">Ghost button</a>
-            <a class="link-arrow link-arrow--light" href="#components">View the menu <span aria-hidden="true">↗</span></a>
+            <a class="btn btn--gold" href="#components">Book a table</a>
+            <a class="btn btn--ghost" href="#components">Ghost</a>
+            <a class="link-arrow link-arrow--gold" href="#components">Saturday brunch <span aria-hidden="true">↗</span></a>
           </div>
         </div>
-        <div class="sg-comp sg-tile--char">
-          <span class="sg-tile__label">Menu cards</span>
+        <div class="sg-comp section--champagne">
+          <span class="sg-tile__label sg-tile__label--ink">Buttons on champagne</span>
+          <div class="sg-row">
+            <a class="btn btn--emerald" href="#components">Book brunch</a>
+            <a class="btn btn--ghost-ink" href="#components">Copy message</a>
+            <a class="link-arrow" href="#components">Plan your celebration <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="sg-comp sg-comp--dark">
+          <span class="sg-tile__label">Menu tabs</span>
           <div class="sg-row sg-row--cards">
-            <span class="menu-card" aria-selected="true"><span class="menu-card__title">Primi</span><span class="menu-card__desc">Handmade pasta and risotto</span></span>
-            <span class="menu-card"><span class="menu-card__title">Secondi</span><span class="menu-card__desc">Steaks, fish and the oak grill</span></span>
+            <span class="menu-card" aria-selected="true"><span class="menu-card__title">Brunch</span><span class="menu-card__desc">Saturdays, 1pm – 3pm</span></span>
+            <span class="menu-card"><span class="menu-card__title">Cocktails</span><span class="menu-card__desc">Mimosas and classics</span></span>
           </div>
         </div>
-        <div class="sg-comp section--cream">
-          <span class="sg-tile__label sg-tile__label--ink">Event card</span>
-          <article class="exp-card sg-exp">
-            <figure class="exp-card__media"><img src="assets/img/exp-negroni.jpg" alt="" width="1000" height="1000" loading="lazy"></figure>
-            <p class="exp-card__date">Dec 12 · 2026</p>
-            <h3 class="exp-card__title">Negroni masterclass</h3>
-            <p class="exp-card__time">6:00 pm – 7:30 pm</p>
-            <a class="btn btn--red btn--small" href="#components">Get ticket <span aria-hidden="true">↗</span></a>
+        <div class="sg-comp section--champagne">
+          <span class="sg-tile__label sg-tile__label--ink">Special card</span>
+          <article class="special-card sg-special">
+            <figure class="special-card__media"><img src="assets/img/one-burger.jpg" alt="" width="350" height="432" loading="lazy"></figure>
+            <p class="special-card__when">Tuesday – Thursday · All day</p>
+            <h3 class="special-card__title">Lamb burger &amp; chips with a cocktail</h3>
+            <p class="special-card__price">R149</p>
           </article>
         </div>
-        <div class="sg-comp reserve__card">
-          <span class="sg-tile__label sg-tile__label--ink">Form fields</span>
-          <div class="form-grid">
-            <div class="field"><label for="sg-a">Full name</label><input id="sg-a" value="Giulia Rossi"></div>
-            <div class="field"><label for="sg-b">Email</label><input id="sg-b" aria-invalid="true" value="giulia@"><p class="field__error">That email address doesn’t look right.</p></div>
-          </div>
-        </div>
       </div>
     </section>
 
-    <!-- Applications -->
-    <section class="sg-section" id="applications" aria-labelledby="apps-title">
-      <header class="sg-section__head">
-        <p class="eyebrow">06</p>
-        <h2 class="display" id="apps-title">Applications</h2>
-        <p>The identity carries onto the table: table tents, printed menus, napkins and uniforms embroidered with the monogram in Fiamma Red.</p>
-      </header>
-      <div class="sg-apps">
-        <div class="sg-app sg-app--tent">
-          <div class="sg-tent"><span class="wordmark">Fiamma</span><span class="display sg-tent__num">Tavolo 12</span></div>
-          <div class="sg-tent sg-tent--back"><svg class="monogram" aria-hidden="true"><use href="#monogram"/></svg></div>
-          <span class="sg-tile__label sg-tile__label--ink">Table tent</span>
-        </div>
-        <div class="sg-app sg-app--menu">
-          <div class="sg-printed-menu">
-            <svg class="monogram" aria-hidden="true"><use href="#monogram"/></svg>
-            <p class="eyebrow eyebrow--red">Il menu</p>
-            <p class="display sg-printed-menu__head">Primi</p>
-            <p class="sg-printed-menu__item">Tagliatelle al ragù <span>24</span></p>
-            <p class="sg-printed-menu__item">Cacio e pepe <span>21</span></p>
-            <p class="display sg-printed-menu__head">Secondi</p>
-            <p class="sg-printed-menu__item">Bistecca alla Fiamma <span>68</span></p>
-            <p class="sg-printed-menu__item">Branzino alla brace <span>36</span></p>
-          </div>
-          <span class="sg-tile__label">Printed menu</span>
-        </div>
-        <div class="sg-app sg-app--uniform">
-          <div class="sg-jacket"><svg class="monogram" aria-hidden="true"><use href="#monogram"/></svg></div>
-          <span class="sg-tile__label sg-tile__label--ink">Chef jacket embroidery</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Photography -->
     <section class="sg-section" id="photography" aria-labelledby="photo-title">
       <header class="sg-section__head">
-        <p class="eyebrow">07</p>
         <h2 class="display" id="photo-title">Photography</h2>
-        <p>Shoot after dark. Warm pendant light, deep shadows, glossy food and real moments between guests. Crop close, let the background fall away, and never use flash.</p>
+        <p>Warm, glossy and social. Food shot close on wood with a cocktail in frame; the room under its ring lights; guests dressed up and mid-laugh; the pool deck in full sun.</p>
       </header>
       <div class="sg-photos">
-        <figure><img src="assets/img/hero-interior.jpg" alt="" width="2000" height="1200" loading="lazy"><figcaption>Low light, warm pendants</figcaption></figure>
-        <figure><img src="assets/img/menu-bg.jpg" alt="" width="2000" height="1200" loading="lazy"><figcaption>Close, glossy food</figcaption></figure>
-        <figure><img src="assets/img/manifesto-guests.jpg" alt="" width="1200" height="1400" loading="lazy"><figcaption>Guests mid-moment</figcaption></figure>
-        <figure><img src="assets/img/story-chef.jpg" alt="" width="1200" height="1400" loading="lazy"><figcaption>Hands, fire, craft</figcaption></figure>
+        <figure><img src="assets/img/one-burger.jpg" alt="" width="350" height="432" loading="lazy"><figcaption>Food with a cocktail</figcaption></figure>
+        <figure><img src="assets/img/one-dining.jpg" alt="" width="350" height="432" loading="lazy"><figcaption>The room</figcaption></figure>
+        <figure><img src="assets/img/one-brunch.jpg" alt="" width="348" height="432" loading="lazy"><figcaption>Guests mid-moment</figcaption></figure>
+        <figure><img src="assets/img/one-deck.jpg" alt="" width="348" height="432" loading="lazy"><figcaption>Poolside in the sun</figcaption></figure>
       </div>
-      <p class="sg-note">The images on this page are generated placeholders. Replace the files in <code>assets/img/</code> with real photography under the same filenames.</p>
+      <p class="sg-note">Photos are cropped from One’s Instagram as stand-ins. Replace the files in <code>assets/img/</code> with full-resolution originals under the same names.</p>
     </section>
   </main>
 
   <footer class="sg-footer">
-    <svg class="monogram" aria-hidden="true"><use href="#monogram"/></svg>
-    <p class="display">L’Italia, accesa dal fuoco.</p>
-    <a class="link-arrow link-arrow--light" href="index.html">Visit the website <span aria-hidden="true">↗</span></a>
+    <svg class="sg-footer__mark" aria-hidden="true"><use href="#one-mark"/></svg>
+    <p class="display">Where sophistication meets comfort.</p>
+    <a class="link-arrow link-arrow--gold" href="index.html">Visit the website <span aria-hidden="true">↗</span></a>
   </footer>
 </body>
 </html>

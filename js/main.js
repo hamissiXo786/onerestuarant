@@ -1,27 +1,26 @@
 /* ==========================================================================
-   Fiamma: interactions. Vanilla JS, no dependencies.
+   ONƎ Restaurant | Lounge: interactions. Vanilla JS, no dependencies.
    ========================================================================== */
 
-/* ---------- Settings: edit these for your restaurant ---------- */
+/* ---------- Settings: edit these ---------- */
 const CONFIG = {
-  // Paste a Formspree / Getform / Netlify Forms endpoint here to receive
-  // bookings directly. When empty, the form opens the guest's email app
-  // with the request filled in, addressed to RESERVATION_EMAIL.
-  FORM_ENDPOINT: '',
-  RESERVATION_EMAIL: 'reservations@fiamma.example',
-  MAX_GUESTS_ONLINE: 12,
+  // WhatsApp number in international format, digits only (065 079 3825 → 27650793825).
+  WHATSAPP_NUMBER: '27650793825',
+  WHATSAPP_DISPLAY: '065 079 3825',
+  MAX_GUESTS_ONLINE: 20,
   MAX_DAYS_AHEAD: 90,
   SLOT_MINUTES: 30,
   LAST_SEATING_BEFORE_CLOSE: 60, // minutes
-  // Opening hours per weekday (0 = Sunday). Keep in sync with the footer.
+  // PLACEHOLDER opening hours per weekday (0 = Sunday). Confirm with One,
+  // then keep in sync with the "Opening hours" list in the footer of index.html.
   HOURS: {
-    0: [['11:00', '14:30'], ['17:00', '21:30']],
+    0: [['12:00', '20:00']],
     1: [],
-    2: [['12:00', '14:30'], ['17:30', '22:00']],
-    3: [['12:00', '14:30'], ['17:30', '22:00']],
-    4: [['12:00', '14:30'], ['17:30', '22:00']],
-    5: [['12:00', '14:30'], ['17:30', '23:00']],
-    6: [['11:00', '14:30'], ['17:30', '23:00']],
+    2: [['12:00', '22:00']],
+    3: [['12:00', '22:00']],
+    4: [['12:00', '22:00']],
+    5: [['12:00', '24:00']],
+    6: [['12:00', '24:00']],
   },
 };
 
@@ -59,7 +58,7 @@ mobileNav.addEventListener('click', (e) => { if (e.target.closest('a')) setNav(f
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && !mobileNav.hidden) { setNav(false); navToggle.focus(); }
 });
-window.matchMedia('(min-width: 1081px)').addEventListener('change', (e) => { if (e.matches) setNav(false); });
+window.matchMedia('(min-width: 1101px)').addEventListener('change', (e) => { if (e.matches) setNav(false); });
 
 /* ---------- Scroll reveals ---------- */
 $$('[data-stagger]').forEach((group) => {
@@ -87,7 +86,6 @@ function layoutCascade() {
   const n = tiles.length;
   tiles.forEach((tile, i) => {
     const t = i / (n - 1);
-    // Cascade runs bottom-left → top-right, like a fanned stack of photos.
     const cx = -0.3 * w + t * 1.25 * w;
     const cy = 0.95 * w - t * 1.05 * w;
     tile.style.setProperty('--sx', `${Math.round(cx - tile.offsetLeft)}px`);
@@ -100,20 +98,17 @@ function updateCollage(vh) {
   const r = collage.getBoundingClientRect();
   if (r.bottom < 0 || r.top > vh) return;
   const raw = clamp((vh - r.top) / (vh * 0.85), 0, 1);
-  const eased = 1 - Math.pow(1 - raw, 3);
-  ring.style.setProperty('--p', eased.toFixed(3));
+  ring.style.setProperty('--p', (1 - Math.pow(1 - raw, 3)).toFixed(3));
 }
 
 /* ---------- Parallax ---------- */
 const parallaxEls = $$('[data-parallax]').map((el) => ({ el, speed: parseFloat(el.dataset.parallax) || 0 }));
-
 function updateParallax(vh) {
   if (reduceMotion) return;
   parallaxEls.forEach(({ el, speed }) => {
     const host = el.parentElement.getBoundingClientRect();
     if (host.bottom < -200 || host.top > vh + 200) return;
-    const offset = (host.top + host.height / 2 - vh / 2) * speed;
-    el.style.transform = `translate3d(0, ${offset.toFixed(1)}px, 0)`;
+    el.style.transform = `translate3d(0, ${((host.top + host.height / 2 - vh / 2) * speed).toFixed(1)}px, 0)`;
   });
 }
 
@@ -182,8 +177,6 @@ $$('[data-carousel]').forEach((root) => {
     if (e.key === 'ArrowRight') { e.preventDefault(); track.scrollBy({ left: step(), behavior }); }
     if (e.key === 'ArrowLeft') { e.preventDefault(); track.scrollBy({ left: -step(), behavior }); }
   });
-
-  // Mouse drag (touch already scrolls natively).
   let startX = 0; let startScroll = 0; let dragging = false;
   track.addEventListener('pointerdown', (e) => {
     if (e.pointerType !== 'mouse') return;
@@ -191,14 +184,11 @@ $$('[data-carousel]').forEach((root) => {
     track.setPointerCapture(e.pointerId);
     track.classList.add('is-dragging');
   });
-  track.addEventListener('pointermove', (e) => {
-    if (dragging) track.scrollLeft = startScroll - (e.clientX - startX);
-  });
+  track.addEventListener('pointermove', (e) => { if (dragging) track.scrollLeft = startScroll - (e.clientX - startX); });
   const end = () => {
     if (!dragging) return;
     dragging = false;
     track.classList.remove('is-dragging');
-    // Snap to the nearest card after a drag.
     const s = step();
     track.scrollTo({ left: Math.round(track.scrollLeft / s) * s, behavior });
   };
@@ -208,7 +198,20 @@ $$('[data-carousel]').forEach((root) => {
   sync();
 });
 
-/* ---------- Reservation form ---------- */
+/* ---------- Copy helpers ---------- */
+async function copyText(text, button) {
+  const original = button.textContent;
+  try {
+    await navigator.clipboard.writeText(text);
+    button.textContent = 'Copied';
+  } catch (err) {
+    button.textContent = 'Select & copy';
+  }
+  setTimeout(() => { button.textContent = original; }, 2000);
+}
+$$('[data-copy]').forEach((btn) => btn.addEventListener('click', () => copyText(btn.dataset.copy, btn)));
+
+/* ---------- Booking form → WhatsApp message ---------- */
 const form = $('[data-reserve-form]');
 if (form) {
   const success = $('[data-reserve-success]');
@@ -216,33 +219,28 @@ if (form) {
   const dateInput = form.elements.date;
   const timeSelect = form.elements.time;
   const guestsSelect = form.elements.guests;
-  const submitBtn = $('button[type="submit"]', form);
+  const occasionSelect = form.elements.occasion;
+  const messageBox = $('[data-wa-message]', success);
+  const waLink = $('[data-wa-link]', success);
   let attempted = false;
+  let lastMessage = '';
 
   const pad = (n) => String(n).padStart(2, '0');
   const isoDate = (d) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
-  const parseDate = (value) => {
-    const [y, m, d] = value.split('-').map(Number);
-    return new Date(y, m - 1, d);
-  };
+  const parseDate = (value) => { const [y, m, d] = value.split('-').map(Number); return new Date(y, m - 1, d); };
   const toMinutes = (hhmm) => { const [h, m] = hhmm.split(':').map(Number); return h * 60 + m; };
-  const label = (mins) => {
-    const h = Math.floor(mins / 60); const m = mins % 60;
-    return `${((h + 11) % 12) + 1}:${pad(m)} ${h < 12 ? 'am' : 'pm'}`;
-  };
+  const label = (mins) => `${pad(Math.floor(mins / 60) % 24)}:${pad(mins % 60)}`;
   const today = () => { const d = new Date(); d.setHours(0, 0, 0, 0); return d; };
 
-  // Date limits
   const maxDate = today(); maxDate.setDate(maxDate.getDate() + CONFIG.MAX_DAYS_AHEAD);
   dateInput.min = isoDate(today());
   dateInput.max = isoDate(maxDate);
 
-  // Guests 1–N, plus a "large party" option
   guestsSelect.innerHTML = '';
   for (let g = 1; g <= CONFIG.MAX_GUESTS_ONLINE; g++) {
     guestsSelect.add(new Option(`${g} guest${g > 1 ? 's' : ''}`, String(g), false, g === 2));
   }
-  guestsSelect.add(new Option(`${CONFIG.MAX_GUESTS_ONLINE + 1}+ guests (contact us)`, 'large'));
+  guestsSelect.add(new Option(`More than ${CONFIG.MAX_GUESTS_ONLINE} guests`, 'large'));
 
   function slotsFor(date) {
     const ranges = CONFIG.HOURS[date.getDay()] || [];
@@ -266,11 +264,17 @@ if (form) {
     if (!slots.length) { timeSelect.add(new Option('No times available', '')); return; }
     timeSelect.add(new Option('Select a time', ''));
     slots.forEach((t) => {
-      const v = `${pad(Math.floor(t / 60))}:${pad(t % 60)}`;
-      timeSelect.add(new Option(label(t), v, false, v === previous));
+      const v = label(t);
+      timeSelect.add(new Option(v, v, false, v === previous));
     });
   }
   dateInput.addEventListener('change', () => { fillTimes(); if (attempted) validate(timeSelect); });
+
+  // Links like "Book brunch" pre-select the occasion.
+  $$('[data-occasion]').forEach((link) => link.addEventListener('click', () => {
+    const wanted = link.dataset.occasion;
+    if ([...occasionSelect.options].some((o) => o.value === wanted || o.text === wanted)) occasionSelect.value = wanted;
+  }));
 
   function messageFor(field) {
     const v = field.validity;
@@ -278,19 +282,11 @@ if (form) {
       case 'name':
         if (v.valueMissing || !field.value.trim()) return 'Please tell us your name.';
         break;
-      case 'email':
-        if (v.valueMissing) return 'Please enter your email.';
-        if (v.typeMismatch) return 'That email address doesn’t look right.';
-        break;
-      case 'phone':
-        if (v.valueMissing) return 'Please add a phone number in case we need to reach you.';
-        if (v.patternMismatch) return 'Use digits, spaces and + ( ) - only.';
-        break;
       case 'date': {
         if (v.valueMissing || !field.value) return 'Please choose a date.';
         const d = parseDate(field.value);
         if (d < today()) return 'Please choose today or a later date.';
-        if (d > maxDate) return `We take online bookings up to ${CONFIG.MAX_DAYS_AHEAD} days ahead.`;
+        if (d > maxDate) return `We take bookings up to ${CONFIG.MAX_DAYS_AHEAD} days ahead.`;
         if (!(CONFIG.HOURS[d.getDay()] || []).length) return 'We’re closed that day. Please pick another date.';
         if (!slotsFor(d).length) return 'No times left on that date. Please pick another.';
         break;
@@ -299,7 +295,7 @@ if (form) {
         if (!field.value) return 'Please choose a time.';
         break;
       case 'guests':
-        if (field.value === 'large') return `For ${CONFIG.MAX_GUESTS_ONLINE + 1}+ guests, please call or email us and we’ll plan it with you.`;
+        if (field.value === 'large') return `For more than ${CONFIG.MAX_GUESTS_ONLINE} guests, WhatsApp us on ${CONFIG.WHATSAPP_DISPLAY} and we’ll plan it with you.`;
         break;
       default:
     }
@@ -314,20 +310,28 @@ if (form) {
     return !msg;
   }
 
-  const fields = ['name', 'email', 'phone', 'date', 'time', 'guests'].map((n) => form.elements[n]);
+  const fields = ['name', 'date', 'time', 'guests'].map((n) => form.elements[n]);
   fields.forEach((f) => {
     f.addEventListener(f.tagName === 'SELECT' ? 'change' : 'input', () => { if (attempted) validate(f); });
     f.addEventListener('blur', () => { if (attempted) validate(f); });
   });
 
-  function showSuccess(message) {
-    form.hidden = true;
-    success.hidden = false;
-    if (message) $('[data-success-message]', success).textContent = message;
-    success.focus();
+  function buildMessage(data) {
+    const day = parseDate(data.date).toLocaleDateString('en-ZA', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+    const lines = [
+      'Hi One Restaurant & Lounge, I’d like to book a table.',
+      '',
+      `Name: ${data.name.trim()}`,
+      `Date: ${day}`,
+      `Time: ${data.time}`,
+      `Guests: ${data.guests}`,
+    ];
+    if (data.occasion) lines.push(`Occasion: ${data.occasion}`);
+    if (data.notes && data.notes.trim()) lines.push(`Notes: ${data.notes.trim()}`);
+    return lines.join('\n');
   }
 
-  form.addEventListener('submit', async (e) => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
     attempted = true;
     const results = fields.map(validate);
@@ -338,64 +342,23 @@ if (form) {
       return;
     }
     status.textContent = '';
-    const data = Object.fromEntries(new FormData(form));
-    const when = `${parseDate(data.date).toLocaleDateString(undefined, { weekday: 'long', day: 'numeric', month: 'long' })} at ${label(toMinutes(data.time))}`;
-
-    if (!CONFIG.FORM_ENDPOINT) {
-      const body = [
-        `Name: ${data.name}`, `Email: ${data.email}`, `Phone: ${data.phone}`,
-        `Date: ${data.date}`, `Time: ${data.time}`, `Guests: ${data.guests}`, `Notes: ${data.notes || '-'}`,
-      ].join('\n');
-      const href = `mailto:${CONFIG.RESERVATION_EMAIL}?subject=${encodeURIComponent(`Reservation request: ${data.guests} guests, ${data.date} ${data.time}`)}&body=${encodeURIComponent(body)}`;
-      window.location.href = href;
-      showSuccess(`We’ve opened your email app with your request for ${data.guests} on ${when}. Just press send and we’ll confirm shortly.`);
-      return;
-    }
-
-    submitBtn.disabled = true;
-    submitBtn.firstChild.textContent = 'Sending… ';
-    try {
-      const res = await fetch(CONFIG.FORM_ENDPOINT, {
-        method: 'POST',
-        headers: { Accept: 'application/json' },
-        body: new FormData(form),
-      });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      showSuccess(`Your request for ${data.guests} on ${when} is in. We’ll confirm by email shortly.`);
-    } catch (err) {
-      status.textContent = 'Sorry, something went wrong sending your request. Please try again or call us on (000) 555-0142.';
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.firstChild.textContent = 'Request reservation ';
-    }
+    lastMessage = buildMessage(Object.fromEntries(new FormData(form)));
+    messageBox.textContent = lastMessage;
+    waLink.href = `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(lastMessage)}`;
+    form.hidden = true;
+    success.hidden = false;
+    success.focus();
   });
 
-  $('[data-reserve-again]').addEventListener('click', () => {
-    form.reset();
-    attempted = false;
-    fields.forEach((f) => { f.removeAttribute('aria-invalid'); const err = document.getElementById(`${f.id}-err`); if (err) err.textContent = ''; });
-    guestsSelect.value = '2';
-    fillTimes();
+  $('[data-copy-message]', success).addEventListener('click', (e) => copyText(lastMessage, e.currentTarget));
+
+  $('[data-reserve-again]', success).addEventListener('click', () => {
     success.hidden = true;
     form.hidden = false;
     form.elements.name.focus();
   });
 
   fillTimes();
-}
-
-/* ---------- Newsletter ---------- */
-const newsletter = $('[data-newsletter]');
-if (newsletter) {
-  newsletter.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const out = $('[data-newsletter-status]', newsletter);
-    const input = newsletter.elements.email;
-    if (!input.checkValidity()) { out.textContent = 'Please enter a valid email address.'; input.focus(); return; }
-    // Connect this to your email provider (Mailchimp, Buttondown…) when ready.
-    out.textContent = 'Grazie! You’re on the list.';
-    newsletter.reset();
-  });
 }
 
 /* ---------- Footer year ---------- */
